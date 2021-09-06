@@ -94,7 +94,7 @@ export function findQuantityAndConvertIfUnicode(ingredientLine: string, language
 
     // If there's a match for the unicodePart in our dictionary above
     if (unicodeObj[unicodePart]) {
-      return [`${numericPart} ${unicodeObj[unicodePart]}`, ingredientLine.replace(getFirstMatch(ingredientLine, unicodeFractionRegex), '').trim()];
+      return [`${numericPart} ${unicodeObj[unicodePart]}`, ingredientLine.replace(getFirstMatch(ingredientLine, unicodeFractionRegex), '').replace(numericPart,'').trim()];
     }
   }
 
