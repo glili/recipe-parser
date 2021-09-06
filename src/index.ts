@@ -97,7 +97,8 @@ function getPreposition(input: string, language: string) {
 }
 
 export function parse(recipeString: string, language: string) {
-  const ingredientLine = recipeString.trim(); // removes leading and trailing whitespace
+  // removes leading and trailing whitespace and extra spaces inside
+  const ingredientLine = recipeString.replace(/\s+/g," ").trim(); 
 
   /* restOfIngredient represents rest of ingredient line.
   For example: "1 pinch salt" --> quantity: 1, restOfIngredient: pinch salt */
